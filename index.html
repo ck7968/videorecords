@@ -26,7 +26,15 @@
   .concl ol { margin: 4px 0 0 18px; padding: 0; font-size: 14px; line-height: 1.6; }
   .oneline { font-size: 14px; color: inherit; opacity: .85; margin: 6px 0; line-height: 1.6; }
   .thumb { width: 100%; border-radius: 8px; margin: 8px 0 4px; display: block; }
-  @media (min-width: 700px) { .thumb { width: 320px; max-width: 100%; } }
+  @media (min-width: 700px) {
+    .card { display: grid; grid-template-columns: 320px 1fr; column-gap: 14px; }
+    .card .meta, .card h2 { grid-column: 1 / -1; }
+    .card .thumb { grid-column: 1; grid-row: 3 / 5; width: 320px; max-width: 100%; margin: 0; align-self: start; }
+    .card .concl { grid-column: 2; grid-row: 3; margin: 0; }
+    .card .oneline { grid-column: 2; grid-row: 4; }
+    .card .vlink { grid-column: 1; grid-row: 5; margin-top: 6px; }
+    .card details { grid-column: 1 / -1; }
+  }
   .vlink { font-size: 13.5px; color: #2563eb; text-decoration: none; }
   details { margin-top: 8px; }
   summary { cursor: pointer; font-size: 13.5px; color: #2563eb; }
