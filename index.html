@@ -35,6 +35,42 @@
     .card .vlink { grid-column: 1; grid-row: 5; margin-top: 6px; }
     .card details { grid-column: 1 / -1; }
   }
+  /* Desktop redesign (2026-11-18): wide container, two/three-column card
+     grid, latest video featured across the top. Mobile (<1024px) layout
+     above is intentionally left as it was. */
+  @media (min-width: 1024px) {
+    .toolbar { max-width: 1560px; margin: 14px auto 0; top: 14px; padding: 12px 16px; border: 1px solid #e0e4ea; border-radius: 16px; background: rgba(246,247,249,.94); box-shadow: 0 8px 28px rgba(15,23,42,.08); justify-content: space-between; }
+    .toolbar .fbtn { padding: 7px 15px; font-size: 13.5px; background: #fff; }
+    .toolbar input { flex: 0 1 380px; padding: 9px 13px; border-radius: 10px; background: #fff; font-size: 14.5px; }
+    .wrap { max-width: 1560px; padding: 18px 16px 56px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
+    .wrap .empty { grid-column: 1 / -1; }
+    .card { margin: 0; padding: 18px 20px; border-radius: 16px; box-shadow: 0 6px 22px rgba(15,23,42,.06); grid-template-columns: 232px minmax(0, 1fr); column-gap: 16px; }
+    .card h2 { font-size: 17.5px; }
+    .card .thumb { width: 232px; height: 130px; object-fit: cover; }
+    .card .concl { padding: 12px 14px; }
+    .card details { background: rgba(37,99,235,.04); border: 1px solid rgba(37,99,235,.12); border-radius: 10px; padding: 9px 12px; }
+    #list .card:first-child { grid-column: 1 / -1; grid-template-columns: 400px minmax(0, 1fr); padding: 22px 24px; }
+    #list .card:first-child h2 { font-size: 21px; }
+    #list .card:first-child .thumb { width: 400px; height: 225px; }
+    #list .card:first-child .concl ol, #list .card:first-child .oneline { font-size: 15.5px; }
+  }
+  @media (min-width: 1450px) {
+    .card { grid-template-columns: 300px minmax(0, 1fr); }
+    .card .thumb { width: 300px; height: 169px; }
+  }
+  @media (min-width: 1850px) {
+    .toolbar, .wrap { max-width: 1800px; }
+    .wrap { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card { grid-template-columns: 225px minmax(0, 1fr); padding: 18px; }
+    .card .thumb { width: 225px; height: 126px; }
+    #list .card:first-child { grid-column: span 2; grid-template-columns: 420px minmax(0, 1fr); }
+    #list .card:first-child .thumb { width: 420px; height: 236px; }
+  }
+  @media (min-width: 1024px) and (prefers-color-scheme: dark) {
+    .toolbar { background: rgba(20,22,26,.95); border-color: #333; box-shadow: none; }
+    .toolbar .fbtn, .toolbar input { background: #1e2126; }
+    .card details { background: rgba(37,99,235,.08); }
+  }
   .vlink { font-size: 13.5px; color: #2563eb; text-decoration: none; }
   details { margin-top: 8px; }
   summary { cursor: pointer; font-size: 13.5px; color: #2563eb; }
