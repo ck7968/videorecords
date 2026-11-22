@@ -71,6 +71,10 @@
     .toolbar .fbtn, .toolbar input { background: #1e2126; }
     .card details { background: rgba(37,99,235,.08); }
   }
+  /* Must come after the desktop toolbar rules: they set .fbtn background
+     with equal specificity and would otherwise leave the active filter
+     button white-text-on-white (invisible label), found 2026-11-22. */
+  .toolbar .fbtn.active { background: #2563eb; border-color: #2563eb; color: #fff; }
   .vlink { font-size: 13.5px; color: #2563eb; text-decoration: none; }
   details { margin-top: 8px; }
   summary { cursor: pointer; font-size: 13.5px; color: #2563eb; }
